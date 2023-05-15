@@ -15,7 +15,11 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   job_1:
+    name: J1 -> DevSecOps Job
     runs-on: ubuntu-latest
     steps:
-      - name: DevSecOps Step
+      - name: J1S1 -> DevSecOps Step 1
         run: echo Starting DevSecOps on Python code
+
+      - name: J1S2 -> DevSecOps Step 2
+        run: echo Starting DevSecOps on Flask code
