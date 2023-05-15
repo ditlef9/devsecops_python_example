@@ -14,14 +14,8 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  deploy:
+  job_1:
     runs-on: ubuntu-latest
-    permissions:
-      contents: "read"
-      id-token: "write"
     steps:
-      - name: devsecops
-
-      # Example of using the output
-      - id: "test"
-        run: 'curl "${{ steps.deploy.outputs.url }}"'
+      - name: DevSecOps Step
+        run: echo Starting DevSecOps on Python code
