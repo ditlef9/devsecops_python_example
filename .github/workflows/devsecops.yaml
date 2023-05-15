@@ -3,7 +3,6 @@ name: CD
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [main]
   pull_request:
@@ -14,12 +13,19 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  job_docker:
+    name: J1 -> Docker Job
+    runs-on: docker-latest
+    steps:
+      - name: J1S1 -> Docker Step 1
+        run: echo Starting Docker
+
   job_1:
-    name: J1 -> DevSecOps Job
+    name: J2 -> DevSecOps Job
     runs-on: ubuntu-latest
     steps:
-      - name: J1S1 -> DevSecOps Step 1
+      - name: J2S1 -> DevSecOps Step 1
         run: echo Starting DevSecOps on Python code
 
-      - name: J1S2 -> DevSecOps Step 2
+      - name: J2S2 -> DevSecOps Step 2
         run: echo Starting DevSecOps on Flask code
